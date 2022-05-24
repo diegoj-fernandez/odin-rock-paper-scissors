@@ -79,7 +79,7 @@ let capitalize = string1 => {
 
 let playRound = (playerSelection,computerSelection) => {
     if (playerSelection == computerSelection) {
-        return "It's a tie!"
+        return "It's a tie! You both chose " + playerSelection 
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
         return "You lose! Paper beats Rock."
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
@@ -106,7 +106,8 @@ let game = (choice) => { //added a parameter
         let playerSelection = choice; // made this variable equal parameter
         //capitalize(prompt("Rock, Paper, or Scissors?"));
         let roundResult = playRound(playerSelection,computerSelection);
-        console.log(roundResult);
+        //console.log(roundResult);
+        htmlRound.innerText = roundResult;
 
         if (roundResult.includes("win") == true) {
             playerWins += 1;
@@ -123,12 +124,17 @@ let game = (choice) => { //added a parameter
         overallResult = "You Lose";
     }
 
-    console.log(overallResult);
+    //console.log(overallResult);
+    htmlOverall.innerText = overallResult;
 }
 
 const rock = document.getElementById("rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+
+const results = document.querySelector(".results");
+const htmlRound = document.querySelector("#round-results");
+const htmlOverall = document.querySelector("#overall-results");
 
 const rockText = rock.innerText;
 const paperText = paper.innerText;
