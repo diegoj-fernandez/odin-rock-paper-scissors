@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     box-sizing: border-box;
     margin: 0;
 }
@@ -11,6 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     width: auto;
+    background: #800000/*linear-gradient(#800000,#00008B);*/
 }
 
 .btn-container {
@@ -18,7 +19,41 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
-    gap: 25px;
+    gap: 100px;
+}
+
+button {
+    height: 200px;
+    width: 200px;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    font-size: 45px;
+    font-weight: 500;
+    background: rgba(0,0,0,0);
+    color: #FFFFFF;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    text-align: center;
+    font-size: 35px;
+    color: #FFFFFF;
+    flex: 1;
+}
+
+.comment-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#round-results {
+    font-size: 30px;
+    color: #FFFFFF;
 }
 
 .results {

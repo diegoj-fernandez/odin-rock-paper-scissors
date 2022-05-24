@@ -14,7 +14,7 @@ let capitalize = string1 => {
     return first.toUpperCase() + rest.toLowerCase();
 }
 
-*/
+// Initial playRound function
 
 let playRound = (playerSelection,computerSelection) => {
     if (playerSelection == computerSelection) {
@@ -34,9 +34,25 @@ let playRound = (playerSelection,computerSelection) => {
     }
 }
 
-//const rock = document.getElementById("rock");
-//const paper = document.querySelector("#paper");
-//const scissors = document.querySelector("#scissors");
+*/
+
+let playRound = (playerSelection,computerSelection) => {
+    if (playerSelection == computerSelection) {
+        return "It's a tie! You both chose " + playerSelection 
+    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+        return "Too bad..." + computerSelection + " beats " + playerSelection
+    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+        return "Nice! " + playerSelection + " beats " + computerSelection
+    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+        return "Nice! " + playerSelection + " beats " + computerSelection
+    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+        return "Too bad..." + computerSelection + " beats " + playerSelection
+    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+        return "Too bad..." + computerSelection + " beats " + playerSelection
+    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+        return "Nice! " + playerSelection + " beats " + computerSelection
+    }
+}
 
 let playerWins = Number();
 let computerWins = Number();
@@ -50,9 +66,9 @@ let game = choice => {
     let roundResult = playRound(playerSelection,computerSelection);
     htmlRound.innerText = roundResult;
 
-    if (roundResult.includes("win") == true) {
+    if (roundResult.includes("Nice") == true) {
         playerWins += 1;
-    } else if (roundResult.includes("lose") == true) {
+    } else if (roundResult.includes("bad") == true) {
         computerWins += 1;
     }
 
@@ -62,12 +78,14 @@ let game = choice => {
     if (playerWins == 5 || computerWins == 5) {
         if (playerWins > computerWins) {
             overallResult = "You win!";
-            htmlOverall.innerText = overallResult;
+            htmlRound.innerText = overallResult;
+            //htmlOverall.innerText = overallResult;
             playerWins = 0;
             computerWins = 0;
         } else {
             overallResult = "You Lose";
-            htmlOverall.innerText = overallResult;
+            htmlRound.innerText = overallResult;
+            //htmlOverall.innerText = overallResult;
             playerWins = 0;
             computerWins = 0;
         }
@@ -76,13 +94,15 @@ let game = choice => {
     }
 }
 
+const endResult = document.querySelector(".results");
 const htmlRound = document.querySelector("#round-results");
 const htmlOverall = document.querySelector("#overall-results");
-
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
-
 const btn = document.querySelectorAll("button");
+//const rock = document.getElementById("rock");
+//const paper = document.querySelector("#paper");
+//const scissors = document.querySelector("#scissors");
 
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", () => {
