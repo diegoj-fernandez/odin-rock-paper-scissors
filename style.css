@@ -1,0 +1,20 @@
+* {
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+}
