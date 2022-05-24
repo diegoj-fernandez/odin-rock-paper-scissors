@@ -95,15 +95,16 @@ let playRound = (playerSelection,computerSelection) => {
     }
 }
 
-let game = () => {
-    let rounds = 5;
+let game = (choice) => { //added a parameter
+    let rounds = 1;
     let playerWins = 0;
     let computerWins = 0;
     let overallResult;
 
     for (let i = 0; i < rounds; i++) {
         let computerSelection = computerPlay();
-        let playerSelection = capitalize(prompt("Rock, Paper, or Scissors?"));
+        let playerSelection = choice; // made this variable equal parameter
+        //capitalize(prompt("Rock, Paper, or Scissors?"));
         let roundResult = playRound(playerSelection,computerSelection);
         console.log(roundResult);
 
@@ -125,4 +126,26 @@ let game = () => {
     console.log(overallResult);
 }
 
-game();
+const rock = document.getElementById("rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+const rockText = rock.innerText;
+const paperText = paper.innerText;
+const scissorsText = scissors.innerText;
+
+rock.addEventListener("click", () => {
+    game(rockText)
+});
+
+paper.addEventListener("click", () => {
+    game(paperText)
+});
+
+scissors.addEventListener("click", () => {
+    game(scissorsText)
+});
+
+//console.log(rock);
+
+//game();
