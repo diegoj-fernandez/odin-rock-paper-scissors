@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/b081ab79a0.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,44 +24,37 @@
         <h1>Welcome Humans</h1>
         <p>You have entered Dueling Hands, an online battle zone where the best of both humanity and technology fight each other to prove who the true champions of this world are. Lucky for you though, this fight is not physical. We machines realize that we have become superior to humans both physically and intellectually; therefore, in order to give you a fighting chance we have opted to play a game of chance. Here at Dueling Hands our competitors fight through the age old game known as: Rock, Paper, Scissors. Consider yourself a lucky person? Lets play and find out.</p>
     </div>
-    <div class="btn-container">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div class="instructions">
+        <div class="instructions-img">
+            <!-- <img src="./img/click.png"> -->
+            <i class="fa-solid fa-computer-mouse"></i>
+        </div>
+        <div class="instructions-body">
+            <h1>How to Play</h1>
+            <p>Seeing as how our arena is online, those meat mittens you humans call hands will be of no use here. Instead we have graciously provided you with three distinct buttons, which you will use to make your decision. The game will be divided into rounds. For each round, click the button containing your choice. The winner will be the first to win five round.</p>
+        </div>
     </div>
-    <div class="results">
-        <div class="score-container">
-            <div class="user-score">
-                <h3><u>YOU</u></h3>
-                <p id="player-score">0</p>
+    <div class="game">
+        <h1>Let's Duel</h1>
+        <div class="scoreboard">
+            <div class="results user-score">
+                <h2>Humans</h2>
+                <p class="chosen user-icon"></p>
+                <p>Wins: <span id="player-score">0</span></p>
             </div>
-            <div class="comp-score">
-                <h3><u>COMPUTER</u></h3>
-                <p id="computer-score">0</p>
+            <div class="btn-container">
+                <button id="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+                <button id="paper"><i class="fa-solid fa-hand"></i></button>
+                <button id="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
+            </div>
+            <div class="results comp-score">
+                <h2>Machines</h2>
+                <p class="chosen comp-icon"></p>
+                <p>Wins: <span id="computer-score">0</span></p>
             </div>
         </div>
-
-        <!--
-
-        <div><p id="overall-results"></p></div>
-        
-        <h2>Round Outcome</h2>
-        <p id="tracker">YOU:<span id="player-score">0</span><br>COMPUTER:<span id="computer-score">0</span></p>
-
-        -->
-        <div class="comment-result">
-            <p id="round-results"></p>
-        </div>
-
-        
-        <!-- 
-
-        <p id="round-results">ROUND</p>
-        <h2>Overall Outcome</h2>
-        <p id="overall-results">OVERALL</p>
-
-        -->
     </div>
+    <div class="footer">diegoj-fernandez</div>
     <script src="./script.js"></script>
 </body>
 </html>

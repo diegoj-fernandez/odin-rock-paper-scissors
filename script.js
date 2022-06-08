@@ -1,10 +1,10 @@
+/*
+
 let computerPlay = () => {
     let compOptions = ["Rock","Paper","Scissors"];
     let compSelect = compOptions[Math.floor(Math.random() * compOptions.length)];
     return compSelect;
 }
-
-/*
 
 // Capitalize input (first letter only) for prompt based user input
 
@@ -14,31 +14,9 @@ let capitalize = string1 => {
     return first.toUpperCase() + rest.toLowerCase();
 }
 
-// Initial playRound function
-
 let playRound = (playerSelection,computerSelection) => {
     if (playerSelection == computerSelection) {
-        return "It's a tie! You both chose " + playerSelection 
-    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
-        return "You lose! " + computerSelection + " beats " + playerSelection
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        return "You win! Rock beats Scissors."
-    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        return "You win! Paper beats Rock."
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-        return "You lose! Scissors beats Paper."
-    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-        return "You lose! Rock beats Scissors."
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        return "You win! Scissors beats Paper."
-    }
-}
-
-*/
-
-let playRound = (playerSelection,computerSelection) => {
-    if (playerSelection == computerSelection) {
-        return "It's a tie! You both chose " + playerSelection 
+        return "It's a tie! You both chose " + playerSelection
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
         return "Too bad..." + computerSelection + " beats " + playerSelection
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
@@ -109,3 +87,30 @@ for (let i = 0; i < btn.length; i++) {
         game(btn[i].innerText)
     });
 }
+
+*/
+
+let computerPlay = () => {
+    let compOptions = ["rock","paper","scissors"];
+    let compSelect = compOptions[Math.floor(Math.random() * compOptions.length)];
+    return compSelect;
+}
+
+const rock = document.querySelector("#rock");
+const rockIcon = rock.innerHTML;
+console.log(rockIcon);
+const paperIcon = document.querySelector(".fa-hand");
+const scissorsIcon = document.querySelector(".fa-hand-scissors");
+
+const userChoice = document.querySelector(".user-icon");
+const compChoice = document.querySelector(".comp-icon");
+
+rock.addEventListener("click", () =>{
+    let comp = computerPlay()
+    console.log(comp)
+    userChoice.innerHTML = rockIcon
+    if (comp == rock.id) {
+        compChoice.innerHTML = rockIcon;
+    }
+});
+
