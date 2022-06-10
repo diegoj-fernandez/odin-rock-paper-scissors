@@ -70,6 +70,45 @@ a {
     color: #0b405a;
 }
 
+.rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b405a;
+    height: 60vh;
+    width: auto;
+    color: #d05228;
+}
+
+.rules h1 {
+    text-shadow: 0px 0px 3px black;
+}
+
+.rules p {
+    
+}
+
+.rules-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.rules-list {
+    text-align: center;
+    line-height: 1.7;
+}
+
+.rules-img {
+    flex: 1;
+    font-size: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .instructions {
     height: 60vh;
     width: auto;
@@ -117,7 +156,7 @@ a {
 .game {
     color: white;
     background: #d05228;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,13 +180,18 @@ a {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    height: 100%;
 }
 
 .chosen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 60px;
+    /*height: 15vh;
+    width: 15vh;*/
 }
 
 .btn-container {
@@ -156,7 +200,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     border-left: 2px solid white;
     border-right: 2px solid white;
 }
@@ -177,6 +221,15 @@ button:hover {
     background: #0b405a;
 }
 
+.statement {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+    font-size: larger;
+}
+
+/*
+
 .score-container {
     display: flex;
     justify-content: center;
@@ -194,6 +247,8 @@ button:hover {
     align-items: center;
     flex: 1;
 }
+
+*/
 
 .footer {
     background: #0b405a;

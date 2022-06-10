@@ -15,45 +15,75 @@
             <p>Dueling Hands</p>
         </div>
         <div class="header-links">
-            <a href="">Info</a>
-            <a href="">Instructions</a>
-            <a href="">Play</a>
+            <a href="#rules">Rules</a>
+            <a href="#instructions">How to Play</a>
+            <a href="#game">Let's Duel</a>
         </div>
     </div>
     <div class="info">
         <h1>Welcome Humans</h1>
+
+        <!--
+
+        <p>You have entered Dueling Hands, an online battle zone where the best of both humanity and technology fight each other to prove who the true champions of this world are. Lucky for you though, this fight is not physical. We machines realize that we have become superior to humans both physically and intellectually; therefore, in order to improve your odds we have opted to play a game of chance. Here at Dueling Hands our competitors fight through a fun little game we call Sword, Armor, Arrow. This game is very similar to what you humans call Rock, Paper, Scissors, only that we have substituted those boring weapons for those used by the warrior of medieval times. Think of this as an ode to the once great warriors of the human race. Oh how disappointed they would be with the current state of your species...oh well. Fancy yourself a lucky individual? Let's find out.</p>
+
+        -->
+
         <p>You have entered Dueling Hands, an online battle zone where the best of both humanity and technology fight each other to prove who the true champions of this world are. Lucky for you though, this fight is not physical. We machines realize that we have become superior to humans both physically and intellectually; therefore, in order to give you a fighting chance we have opted to play a game of chance. Here at Dueling Hands our competitors fight through the age old game known as: Rock, Paper, Scissors. Consider yourself a lucky person? Lets play and find out.</p>
     </div>
-    <div class="instructions">
-        <div class="instructions-img">
-            <!-- <img src="./img/click.png"> -->
-            <i class="fa-solid fa-computer-mouse"></i>
-        </div>
-        <div class="instructions-body">
-            <h1>How to Play</h1>
-            <p>Seeing as how our arena is online, those meat mittens you humans call hands will be of no use here. Instead we have graciously provided you with three distinct buttons, which you will use to make your decision. The game will be divided into rounds. For each round, click the button containing your choice. The winner will be the first to win five round.</p>
-        </div>
-    </div>
-    <div class="game">
-        <h1>Let's Duel</h1>
-        <div class="scoreboard">
-            <div class="results user-score">
-                <h2>Humans</h2>
-                <p class="chosen user-icon"></p>
-                <p>Wins: <span id="player-score">0</span></p>
+    <a name="rules">
+        <div class="rules">
+            <div class="rules-text">
+                <h1>Rules</h1>
+                <div class="rules-list">
+                    <p>Paper beats Rock</p>
+                    <p>Rock beats Scissors</p>
+                    <p>Scissors beats Paper</p>
+                </div>
             </div>
-            <div class="btn-container">
-                <button id="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
-                <button id="paper"><i class="fa-solid fa-hand"></i></button>
-                <button id="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
-            </div>
-            <div class="results comp-score">
-                <h2>Machines</h2>
-                <p class="chosen comp-icon"></p>
-                <p>Wins: <span id="computer-score">0</span></p>
+            <div class="rules-img">
+                <i class="fa-solid fa-scale-balanced"></i>
             </div>
         </div>
-    </div>
+    </a>
+    <a name="instructions">
+        <div class="instructions">
+            <div class="instructions-img">
+                <!-- <img src="./img/click.png"> -->
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+            <div class="instructions-body">
+                <h1>How to Play</h1>
+                <p>Seeing as how our arena is online, those meat mittens you humans call hands will be of no use here. Instead we have graciously provided you with three distinct buttons, which you will use to make your decision. Each button contains an icon resembling one of the three options. The game will be divided into rounds. For each round, click the button containing your weapon of choice. The winner will be the first to win five rounds.</p>
+            </div>
+        </div>
+    </a>
+    <a name="game">
+        <div class="game">
+            <h1>Let's Duel</h1>
+            <div class="scoreboard">
+                <div class="results user-score">
+                    <h2>Humans</h2>
+                    <p class="chosen user-icon"></p>
+                    <p>Wins: <span id="player-score">0</span></p>
+                </div>
+                <div class="btn-container">
+                    <button id="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+                    <p>Rock</p>
+                    <button id="paper"><i class="fa-solid fa-hand"></i></button>
+                    <p>Paper</p>
+                    <button id="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
+                    <p>Scissors</p>
+                </div>
+                <div class="results comp-score">
+                    <h2>Machines</h2>
+                    <p class="chosen comp-icon"></p>
+                    <p>Wins: <span id="computer-score">0</span></p>
+                </div>
+            </div>
+            <div class="statement"></div>
+        </div>
+    </a>
     <div class="footer">diegoj-fernandez</div>
     <script src="./script.js"></script>
 </body>

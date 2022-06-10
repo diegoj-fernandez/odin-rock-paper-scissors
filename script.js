@@ -1,11 +1,3 @@
-/*
-
-let computerPlay = () => {
-    let compOptions = ["Rock","Paper","Scissors"];
-    let compSelect = compOptions[Math.floor(Math.random() * compOptions.length)];
-    return compSelect;
-}
-
 // Capitalize input (first letter only) for prompt based user input
 
 let capitalize = string1 => {
@@ -14,103 +6,98 @@ let capitalize = string1 => {
     return first.toUpperCase() + rest.toLowerCase();
 }
 
-let playRound = (playerSelection,computerSelection) => {
-    if (playerSelection == computerSelection) {
-        return "It's a tie! You both chose " + playerSelection
-    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
-        return "Too bad..." + computerSelection + " beats " + playerSelection
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        return "Nice! " + playerSelection + " beats " + computerSelection
-    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        return "Nice! " + playerSelection + " beats " + computerSelection
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-        return "Too bad..." + computerSelection + " beats " + playerSelection
-    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-        return "Too bad..." + computerSelection + " beats " + playerSelection
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        return "Nice! " + playerSelection + " beats " + computerSelection
-    }
-}
+let compVar;
+let player = Number();
+let comp = Number();;
 
-let playerWins = Number();
-let computerWins = Number();
-let overallResult;
+const rock = document.querySelector("#rock");
+const rockIcon = rock.innerHTML;
+const paper = document.querySelector("#paper");
+const paperIcon = paper.innerHTML;
+const scissors = document.querySelector("#scissors");
+const scissorsIcon = scissors.innerHTML;
 
-let game = choice => {
+const userChoice = document.querySelector(".user-icon");
+const compChoice = document.querySelector(".comp-icon");
+const statement = document.querySelector(".statement");
+const playerWins = document.querySelector("#player-score");
+const compWins = document.querySelector("#computer-score");
 
-    let computerSelection = computerPlay();
-    let playerSelection = choice;
-    //capitalize(prompt("Rock, Paper, or Scissors?"));
-    let roundResult = playRound(playerSelection,computerSelection);
-    htmlRound.innerText = roundResult;
-
-    if (roundResult.includes("Nice") == true) {
-        playerWins += 1;
-    } else if (roundResult.includes("bad") == true) {
-        computerWins += 1;
-    }
-
-    playerScore.innerText = playerWins;
-    computerScore.innerText = computerWins;
-
-    if (playerWins == 5 || computerWins == 5) {
-        if (playerWins > computerWins) {
-            overallResult = "You win!";
-            htmlRound.innerText = overallResult;
-            //htmlOverall.innerText = overallResult;
-            playerWins = 0;
-            computerWins = 0;
-        } else {
-            overallResult = "You Lose";
-            htmlRound.innerText = overallResult;
-            //htmlOverall.innerText = overallResult;
-            playerWins = 0;
-            computerWins = 0;
-        }
-    } else {
-        return;
-    }
-}
-
-const endResult = document.querySelector(".results");
-const htmlRound = document.querySelector("#round-results");
-const htmlOverall = document.querySelector("#overall-results");
-const playerScore = document.querySelector("#player-score");
-const computerScore = document.querySelector("#computer-score");
 const btn = document.querySelectorAll("button");
-//const rock = document.getElementById("rock");
-//const paper = document.querySelector("#paper");
-//const scissors = document.querySelector("#scissors");
-
-for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("click", () => {
-        game(btn[i].innerText)
-    });
-}
-
-*/
+const btnContainer  = document.querySelector(".btn-container");
 
 let computerPlay = () => {
     let compOptions = ["rock","paper","scissors"];
     let compSelect = compOptions[Math.floor(Math.random() * compOptions.length)];
-    return compSelect;
+    if (compSelect == "rock") {
+        compChoice.innerHTML = rockIcon;
+    } else if (compSelect == "paper") {
+        compChoice.innerHTML = paperIcon;
+    } else if (compSelect == "scissors") {
+        compChoice.innerHTML = scissorsIcon;
+    }
+    compVar = compSelect;
 }
 
-const rock = document.querySelector("#rock");
-const rockIcon = rock.innerHTML;
-console.log(rockIcon);
-const paperIcon = document.querySelector(".fa-hand");
-const scissorsIcon = document.querySelector(".fa-hand-scissors");
-
-const userChoice = document.querySelector(".user-icon");
-const compChoice = document.querySelector(".comp-icon");
-
-rock.addEventListener("click", () =>{
-    let comp = computerPlay()
-    console.log(comp)
-    userChoice.innerHTML = rockIcon
-    if (comp == rock.id) {
-        compChoice.innerHTML = rockIcon;
+let playRound = (playerSelection,computerSelection) => {
+    if (playerSelection == computerSelection) {
+        statement.innerText = `Tie!`
+    } else if (playerSelection == "rock" && computerSelection == "paper") {
+        statement.innerText = `You lose! ${computerSelection} beats ${playerSelection}.`
+        comp += 1;
+        compWins.innerText = comp;
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        statement.innerText = `You win! ${playerSelection} beats ${computerSelection}.`
+        player += 1;
+        playerWins.innerText = player;
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        statement.innerText = `You win! ${playerSelection} beats ${computerSelection}.`
+        player += 1;
+        playerWins.innerText = player;
+    } else if (playerSelection == "paper" && computerSelection == "scissors") {
+        statement.innerText = `You lose! ${computerSelection} beats ${playerSelection}.`
+        comp += 1;
+        compWins.innerText = comp;
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        statement.innerText = `You lose! ${computerSelection} beats ${playerSelection}.`
+        comp += 1;
+        compWins.innerText = comp;
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        statement.innerText = `You win! ${playerSelection} beats ${computerSelection}.`
+        player += 1;
+        playerWins.innerText = player;
     }
-});
+}
 
+let winsCheck = () => {
+    if (player == 5 || comp == 5) {
+        if (player == 5 && comp !== 5) {
+            statement.innerText = `Humans win`
+        } else if (comp == 5 && player !== 5) {
+            statement.innerText = `Machines win`
+        }
+    }
+}
+
+btn.forEach(function (i) {
+    i.addEventListener('click', function() {
+        if (i.id == "rock") {
+            userChoice.innerHTML = rockIcon;
+            computerPlay();
+            playRound(i.id, compVar);
+        } else if (i.id == "paper") {
+            userChoice.innerHTML = paperIcon;
+            computerPlay();
+            playRound(i.id, compVar);
+        } else if (i.id == "scissors") {
+            userChoice.innerHTML = scissorsIcon;
+            computerPlay();
+            playRound(i.id, compVar);
+        }
+
+        winsCheck();
+
+        console.log(player)
+        console.log(comp)
+    });
+});
